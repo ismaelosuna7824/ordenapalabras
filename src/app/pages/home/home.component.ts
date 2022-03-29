@@ -235,7 +235,7 @@ export class HomeComponent   {
 
   layout:DropzoneLayout = this.verticalLayout;
 
-  constructor( private snackBarService:MatSnackBar ) {
+  constructor( ) {
     this.layout =  this.horizontalLayout 
   }
 
@@ -249,8 +249,8 @@ export class HomeComponent   {
     this.currentDragEffectMsg = "";
     this.currentDraggableEvent = event;
 
-    this.snackBarService.dismiss();
-    this.snackBarService.open( "Drag started!", undefined, {duration: 2000} );
+    // this.snackBarService.dismiss();
+    // this.snackBarService.open( "Drag started!", undefined, {duration: 2000} );
   }
 
   onDragged( item:any, list:any[], effect:DropEffect ) {
@@ -267,8 +267,8 @@ export class HomeComponent   {
   onDragEnd( event:DragEvent ) {
     console.log(event);
     this.currentDraggableEvent = event;
-    this.snackBarService.dismiss();
-    this.snackBarService.open( this.currentDragEffectMsg || `Drag ended!`, undefined, {duration: 2000} );
+    // this.snackBarService.dismiss();
+    // this.snackBarService.open( this.currentDragEffectMsg || `Drag ended!`, undefined, {duration: 2000} );
   }
 
   onDrop( event:DndDropEvent, list?:any[] ) {
